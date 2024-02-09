@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const stripe=process.env.TOKEN_STRIP_KE
+const stripe = require('stripe')('sk_test_51NrtkkG1p3nVEVTLXr7tNcRtVojRV6Frog35vZNy8mAXnbWl2Dvr7FWzD3gwgriuJTS0EPfJz3gusnSZTJDvmDTg00n2mjxZBv')
+// const stripeapike=process.env.TOKEN_STRIP_KE
+// const stripe = require("stripe")(process.env.TOKEN_STRIP_KE)
 const port = process.env.PORT || 5000
 require("dotenv").config();
 
@@ -31,7 +33,7 @@ nodemailerMailgun.sendMail({
   <h1>Trsnsation ID : ${payment.transactionId}</h1>
   <h1>Seller : ${payment.seller}</h1>
   <img src=${payment.img}/>
-  <h1>You are Wealcome</h1>
+  <h1>You Are Wealcome</h1>
   
   `,
   text: 'wealcome'
